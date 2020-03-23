@@ -144,13 +144,13 @@ TEST_CASE("Test replacement of lower-case and upper-case in dont") {		//works
 }
 TEST_CASE("Test shorter word") {           //fails
 string text = "compute xxx yyy";
-    CHECK(find(text, comput") == string("Happi"));
-    CHECK(find(text, "compu") == string("Happi"));
-    CHECK(find(text, "comp") == string("Happi"));
-    CHECK(find(text, "com") == string("Happi"));
-    CHECK(find(text, "co") == string("Happi"));
-    CHECK(find(text, "c") == string("Happi"));
-    CHECK(find(text, "") == string("Happi"));
+    CHECK(find(text, "comput") == string("compute"));
+    CHECK(find(text, "compu") == string("compute"));
+    CHECK(find(text, "comp") == string("compute"));
+    CHECK(find(text, "com") == string("compute"));
+    CHECK(find(text, "co") == string("compute"));
+    CHECK(find(text, "c") == string("compute"));
+    CHECK(find(text, "") == string("compute"));
 }
 TEST_CASE("Test shorter word with upper case") {	//fails
     string text = "Happy xxx yyy";
@@ -179,5 +179,5 @@ TEST_CASE("Test multiply switches") {			//works
     CHECK(find(text, "AQQNUMKLEtJe") == string("acknowledge"));
     CHECK(find(text, "AQQNUMKLETJe") == string("acknowledge"));
     CHECK(find(text, "AQQNUMKLETJE") == string("acknowledge"));	//109
-    
+     
 }
